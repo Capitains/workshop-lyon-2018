@@ -12,6 +12,20 @@ Thibault Clérice
 thibault.clerice@chartes.psl.eu
 @ponteineptique (Twitter / Github)
 
+--- 
+
+# Se connaître
+
+Quelques questions :
+
+- Connaissez-vous le XML ?
+- Connaissez vous git ? Avez-vous un client git (graphique ou ligne de commande) ?
+- Un compte github ?
+- Savez-vous ce qu'est l'intégration continue ?
+- Pratiquez vous un langage de programmation en dehors du monde du XML ? Python, Javascript, Php, C, etc.
+  - Connaissez-vous le sens de programmation orientée objet ? Si oui, la pratiquez-vous ?
+- Connaissez-vous l'XSLT ?
+
 ---
 
 # CapiTains
