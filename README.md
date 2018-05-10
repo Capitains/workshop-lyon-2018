@@ -56,6 +56,7 @@ Allen H. Renear, Elli Mylonas et David Durand,  Refining our notion of what text
 
 - Basé pour une compatibilité avec le *Canonical Text Services* 5.0
 - Spécifications particulières pour Epidoc ou TEI
+- http://capitains.org/pages/guidelines.html
 
 ## Guidelines 3.0 - *DTS* (Fin 2018)
 
@@ -68,6 +69,18 @@ Allen H. Renear, Elli Mylonas et David Durand,  Refining our notion of what text
 - Les métadonnées de "catalogue" et le texte doivent être séparés pour en faciliser la maintenance
 - Le système de citation du texte doit être clair et exprimé dans le texte.
 
+---
+
+# L'intérêt
+Pour la mise à disposition et mise en valeur
+- https://scaife.perseus.org/
+- https://tutorial-nemo.herokuapp.com/
+- https://tutorial-nemo.herokuapp.com/api/cts?request=GetPassagePlus&urn=urn:cts:latinLit:phi1103.phi001.lascivaroma-lat1:1
+- http://texts.alpheios.net/text/urn:cts:latinLit:phi0959.phi006.alpheios-text-lat1/passage/1.1-1.183/classical-latin-ovid-metamorphoses-alpheios-enhanced-metamorphoses
+- http://texts.alpheios.net/api/dts/ && http://texts.alpheios.net/api/dts/collections?id=urn:perseus:latinLit
+
+Pour la recherche sur texte
+- M. Romanello, Sunoikisis DC, https://github.com/mromanello/SunoikisisDC_NER/blob/master/Sunoikisis%20-%20Named%20Entity%20Extraction%201b.ipynb
 ---
 
 # Guidelines 2.0 : les identifiants CTS
@@ -95,6 +108,7 @@ Allen H. Renear, Elli Mylonas et David Durand,  Refining our notion of what text
 
 # Guidelines 2.0 : la TEI (en mode Epidoc)
 
+- En TEI non Epidoc, `xml:lang` et `n` seraient sur `<body @n @xml:lang/>` ou `<text @xml:base @n/>`
 ```xml
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
  <teiHeader>
@@ -167,3 +181,113 @@ Allen H. Renear, Elli Mylonas et David Durand,  Refining our notion of what text
 </TEI>
 ```
 
+---
+
+# Phase 1 d'exercice
+
+## De nuptiis Philologiae et Mercurii
+
+- `fichiers-travail/De nuptiis Philologiae et Mercurii.xml`
+- Identifiant : `urn:cts:latinLit:stoa0192a.stoa001.digilibLT-lat1`
+
+--- 
+
+# Les fichiers de métadonnées `__cts__.xml`
+
+## Textgroup
+
+```xml
+<textgroup xmlns="http://chs.harvard.edu/xmlns/cts" urn="URN jusqu'au *textgroup*">
+    <groupname xml:lang="Langue d'expression du nom">Nom d'auteur ou de groupe</groupname>
+</textgroup>
+```
+
+--- 
+
+# Les fichiers de métadonnées `__cts__.xml`
+
+## Work
+
+```xml
+<work 
+  xmlns="http://chs.harvard.edu/xmlns/cts" 
+  groupUrn="URN jusqu'au *textgroup*"
+  urn="URN jusqu'au *work*"
+  xml:lang="Langue principale du texte">
+    <title xml:lang="Langue d'expression du titre de l'oeuvre conceptuelle">Titre</title>
+    
+    <edition 
+       urn="URN Complète"
+       xml:lang="lat"
+       workUrn="URN Work">
+        <label xml:lang="Langue d'expression du label">Titre de l'édition</label>
+        <description xml:lang="Langue d'expression de la description">
+          Description de l'édition
+        </description>
+    </edition>
+</work>
+```
+
+--- 
+
+# Métadonnées avancées
+
+## Work
+
+```xml
+<work 
+  groupUrn="urn:cts:latinLit:phi1103" urn="urn:cts:latinLit:phi1103.phi001" xml:lang="lat"
+  xmlns:cpt="http://purl.org/capitains/ns/1.0#" xmlns="http://chs.harvard.edu/xmlns/cts"
+  xmlns:dct="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title xml:lang="lat">Priapeia</title>
+    <title xml:lang="fre">Priapées</title>
+    
+    <edition 
+      urn="urn:cts:latinLit:phi1103.phi001.lascivaroma-lat1" 
+      xml:lang="lat" workUrn="urn:cts:latinLit:phi1103.phi001">
+        <label xml:lang="eng">Priapeia from Poeta Latini minores</label>
+        <description xml:lang="unk">Poeta Latini minores, ed. Aemilius Baehrens, 
+        Leipzig, Teubner, 1879</description>
+        <cpt:structured-metadata>
+            <dct:source>https://archive.org/details/poetaelatinimino12baeh2</dct:source>
+            <dct:contributor >Thibault Clérice</dct:contributor>
+            <dc:language >lat</dc:language>
+            <dct:contributor >Aemilius Baehrens</dct:contributor>
+            <dc:format >text/xml</dc:format>
+            <dc:date>1879</dc:date>
+            <dc:author>Anonymous</dc:author>
+        </cpt:structured-metadata>
+    </edition>
+</work>
+```
+
+---
+
+# Phase 2 d'exercice
+
+À partir du fichier précédent, réaliser les fichiers de métadonnées puis les mettre dans la structure de dossier évoquée précédemment.
+
+Lien utile pour les squelettes : 
+- http://capitains.org/pages/guidelines
+- (Si vous aviez des questions plus tard, en francais ou en anglais) https://github.com/Capitains/Capitains.github.io/issues
+
+
+<img src="images/StructureDossier.png"  style="height:300px; margin:10px auto; display:block;" />
+
+---
+
+# Tester ses textes
+
+---
+
+# Aller plus loin : l'intégration continue
+
+---
+
+# Un apercu de la semaine prochaine
+
+---
+# Question - Discussion
+
+- Votre situation et Capitains ?
+- 
