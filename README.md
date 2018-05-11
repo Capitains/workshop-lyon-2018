@@ -54,6 +54,12 @@ CapiT(ain)S = Citable Text Services for APIs
 
 ---
 
+# Les briques principales
+
+![](images/logos.png)
+
+---
+
 # La théorie derrière Capitains
 
 <small>Ordered Hierarchy of Content Objects</small>
@@ -290,15 +296,52 @@ Lien utile pour les squelettes :
 
 ---
 
-# Tester ses textes
+# Tester ses textes et métadonnées
+
+- Pas de schémas CapiTainS pour les guidelines 2.0
+	- Impossible de faire des schémas pour certaines propriétés (à notre connaissance) : calcul des passages principalement mais aussi liaison des métadonnées inter-fichiers
+- On utilise alors la suite HookTest
+	- Un outil en ligne de commande 
+		- https://github.com/capitains/Hooktest 
+		- `pip install hooktest` avec python3
+		- `hooktest --help`
+   - Un outil en ligne : https://capitains-validator.herokuapp.com/
 
 ---
 
 # Aller plus loin : l'intégration continue
 
+**Principe:** L'intégration continue sert entre autres à lancer une batterie de tests développés par l'équipe de développement ou à compiler des logiciels à chaque modification sur un serveur centralisé.
+
+**Pratique:** 
+- Création d'un repository *git* sur GitHub ( http://github.com )
+- Connexion du repository sur TravisCI ( http://travis-ci.org/ )
+- Configuration du fichier `.travis.yml`
+
 ---
 
-# Un apercu de la semaine prochaine
+# Un script travis Hooktest basique
+
+```yml
+filter_secrets: false
+language: python
+python:
+  - "3.5"
+
+install:
+  - pip install -r requirements.txt
+  - pip3 install HookTest>=1.0.0
+
+script:
+  - hooktest ./ --scheme tei --workers 3 --verbose 10 --console table --countword --allowfailure
+
+```
+
+---
+
+# Un apercu de la prochaine séance
+
+- http://tutorial-nemo.herokuapp.com/
 
 ---
 # Question - Discussion
