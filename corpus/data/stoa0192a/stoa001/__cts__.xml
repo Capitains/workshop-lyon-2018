@@ -1,0 +1,19 @@
+<work 
+    xmlns="http://chs.harvard.edu/xmlns/cts" 
+    groupUrn="urn:cts:latinLit:stoa0192a"
+    urn="urn:cts:latinLit:stoa0192a.stoa001"
+    xml:lang="lat">
+    <title xml:lang="lat">De nuptiis Philologiae et Mercurii</title>
+    
+    <edition 
+        urn="urn:cts:latinLit:stoa0192a.stoa001.digilibLT-lat1"
+        workUrn="urn:cts:latinLit:stoa0192a.stoa001">
+        <label xml:lang="lat">De nuptiis Philologiae et Mercurii</label>
+        <description xml:lang="fre">
+            Conversion en Capitains de l'oeuvre numérisée par DigilibLT
+        </description>
+        <description xml:lang="eng">
+            Converted version of the digilibLT project
+        </description>
+    </edition>
+</work>

@@ -12,6 +12,10 @@ Thibault Clérice
 thibault.clerice@chartes.psl.eu
 @ponteineptique (Twitter / Github)
 
+
+Slides et contenu : 
+	- https://github.com/Capitains/workshop-lyon-2018
+
 --- 
 
 # Se connaître
